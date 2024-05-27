@@ -7,24 +7,15 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<h1>Calcula a media aritmetica</h1>
+	<h1>Diz se o ano é bissexto ou não</h1>
 	<form id="formulario">
-		<label for="primeiro_numero_inteiro">Primeiro Número Inteiro:</label>
-		<input type="text" id="primeiro_numero_inteiro"><br>
+		<label for="ano">Escreva um ano:</label>
+		<input type="text" id="ano"><br>
 		<br>
-		<label for="segundo_numero_inteiro">Segundo Número Inteiro:</label>
-		<input type="text" id="segundo_numero_inteiro"><br>
+		<label for="resultado_ano">Resultado do ano:</label>
+		<input type="text" id="resultado_ano" disabled><br>
 		<br>
-		<label for="terceiro_numero_inteiro">Terceiro Número Inteiro:</label>
-		<input type="text" id="terceiro_numero_inteiro"><br>
-		<br>
-		<label for="quarto_numero_inteiro">Quarto Número Inteiro:</label>
-		<input type="text" id="quarto_numero_inteiro"><br>
-		<br>
-		<label for="resultado_divisao">Resultado da divisão:</label>
-		<input type="text" id="resultado_divisao" disabled><br>
-		<br>
-		<button type="submit" id="submit-btn">Enviar</button>			
+		<button type="submit" id="submit-btn">Enviar</button>		
 		<!-- <button type="submit" onclick="executar()">Enviar</button> -->
 	</form>	
 	<script src="js/script.js"></script>
