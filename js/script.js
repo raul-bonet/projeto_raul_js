@@ -1,29 +1,31 @@
+
 var meuFormulario = document.getElementById("formulario");
 meuFormulario.addEventListener("submit", function(event) {
   event.preventDefault();
 
-  bissexto();
+  adivinhamento();
 
 });
 
+function adivinhamento() {
+  
+  let numero_secreto = 2;
+  let palpite = -1;
+  let resultado = "";
+
+  do {
+    palpite = Number("Adivinhe o número secreto (entre 1 e 10): ");
 
 
-function bissexto() {
-  
-  
-  let ano = Number(document.getElementById("ano").value);
+    if (palpite === numero_secreto) {
+      resultado = "Parabéns! Você acertou o número secreto.";
+    } else if (palpite > numero_secreto) {
+      resultado = "Seu palpite é muito alto.";
+    } else {
+      resultado = "Seu palpite é muito baixo.";
+    }
 
-  if (ano%400 == 0)
-    resultado_ano = `O ano ${ano} é bissexto`;
-    else
-    if(ano%4==0 && ano%100!=0)
-      resultado_ano= `O ano ${ano} é bissexto`;
-    else
-      resultado_ano = `O ano ${ano} não é bissexto`;
-    
+    document.getElementById("resultado").value = resultado;
+  } while (palpite !== numero_secreto);
 
-    document.getElementById("resultado_ano").value = resultado_ano;
-  
-  
-  
 }
