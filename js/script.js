@@ -1,31 +1,36 @@
-
 var meuFormulario = document.getElementById("formulario");
 meuFormulario.addEventListener("submit", function(event) {
-  event.preventDefault();
+  event.preventDefault(); 
 
-  adivinhamento();
-
+  adicionarValor();
+  mostrarPares();
 });
 
-function adivinhamento() {
-  
-  let numero_secreto = 2;
-  let palpite = -1;
-  let resultado = "";
+let vetor = [];
 
-  do {
-    palpite = Number("Adivinhe o número secreto (entre 1 e 10): ");
+function adicionarValor() {
+  const valor = Number(document.getElementById('valor').value);
+  vetor.push(valor);
 
+  const tabela = document.getElementById('tabelaValores').getElementsByTagName('tbody')[0];
+  const novalinha = tabela.insertRow();
+  const celula = novalinha.insertCell();
+  celula.textContent = valor;
 
-    if (palpite === numero_secreto) {
-      resultado = "Parabéns! Você acertou o número secreto.";
-    } else if (palpite > numero_secreto) {
-      resultado = "Seu palpite é muito alto.";
-    } else {
-      resultado = "Seu palpite é muito baixo.";
-    }
-
-    document.getElementById("resultado").value = resultado;
-  } while (palpite !== numero_secreto);
-
+  document.getElementById('valor').value = '';
 }
+
+function mostrarPares() {
+  const tabela = document.getElementById("tabelaPares").getElementsByTagName("tbody")[0];
+
+
+  for (let i = 0; i < vetor.length; i++) {
+    const valor = vetor[i];
+    if (valor % 2 === 0) {
+      const linha = tabela.insertRow();
+      const celula = linha.insertCell();
+      celula.textContent = valor;
+    }
+  }
+}
+

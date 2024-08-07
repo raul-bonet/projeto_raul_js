@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Formulário</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
-	<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Formulário</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<h1>Adivinhe um numero de 0 a 10</h1>
-	<form id="formulario">
-		<label for="palpite">Dê o seu palpite:</label>
-		<input type="text" id="palpite"><br>
-		<br>
-		<label for="numero_secreto">Resultado:</label>
-		<input type="text" id="numero_secreto" disabled><br>
-		<br>
-		<button type="submit" id="submit-btn">Enviar</button>		
-		<!-- <button type="submit" onclick="executar()">Enviar</button> -->
-	</form>	
-	<script src="js/script.js"></script>
+  <h1>Trabalhando com vetores</h1>
+  <form id="formulario">
+    <label for="valor">Digite um valor de cada vez:</label>
+    <input type="text" id="valor"><br>
+    <button type="button" id="add-btn" onclick="adicionarValor()">Adicionar Valor</button>
+    <table id="tabelaValores">
+      <thead>
+        <tr>
+          <th>Valores</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <button type="button" id="par-btn" onclick="mostrarPares()">Mostrar números pares</button>
+    <table id="TabelaPares">
+      <thead>
+        <tr>
+          <th>Números Pares</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </form>
+  <script src="js/script.js"></script>
 </body>
 </html>
