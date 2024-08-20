@@ -1,27 +1,21 @@
-var meuFormulario = document.getElementById("formulario");
-meuFormulario.addEventListener("submit", function(event) {
-  event.preventDefault(); 
 
-  adicionarValor();
-  mostrarPares();
-});
 
-let vetor = [];
+const frutas = ['maçã', 'banana', 'uva', 'melancia', 'pera'];
+const frutasLongas = frutas.filter(fruta => fruta.length > 5);
 
-function adicionarValor() {
-  const valor = Number(document.getElementById('valor').value);
-  vetor.push(valor);
+function adicionarFruta() {
+  vetor.push(fruta);
 
-  const tabela = document.getElementById('tabelaValores').getElementsByTagName('tbody')[0];
+  const tabela = document.getElementById('tabelaFrutas').getElementsByTagName('tbody')[0];
   const novalinha = tabela.insertRow();
   const celula = novalinha.insertCell();
-  celula.textContent = valor;
+  celula.textContent = fruta;
 
-  document.getElementById('valor').value = '';
+  document.getElementById('fruta').value = '';
 }
 
 function mostrarPares() {
-  const tabela = document.getElementById("tabelaPares").getElementsByTagName("tbody")[0];
+  const tabela = document.getElementById("tabelaCinco").getElementsByTagName("tbody")[0];
 
 
   for (let i = 0; i < vetor.length; i++) {
@@ -33,4 +27,3 @@ function mostrarPares() {
     }
   }
 }
-
